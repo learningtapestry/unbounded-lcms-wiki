@@ -41,6 +41,7 @@ The project is set up to support Airbrake, if you use it. You can provide an Air
 
 ### Amazon config
 The project uses AWS S3 to store and serve generated PDFs of learning content. You will need to set up an S3 bucket and provide a key and secret here:
+
 |Name|Description|
 |----|-----------|
 |AWS_ACCESS_KEY_ID|Public part of the AWS credentials|
@@ -52,6 +53,7 @@ The project uses AWS S3 to store and serve generated PDFs of learning content. Y
 
 ### Common standards config
 Common Standards is an API used to map educational content. If you have an AP key you can enter it here:
+
 |Name|Description|
 |----|-----------|
 |COMMON_STANDARDS_PROJECT_API_KEY||
@@ -60,6 +62,7 @@ Common Standards is an API used to map educational content. If you have an AP ke
 
 ### Google config
 The project uses several Google products, including analytics, OAuth for allowing the application to use Google APIs, and several Google Drive folders.
+
 |Name|Description|
 |----|-----------|
 |GOOGLE_ANALYTICS_ID|Id for Google Analytics service|
@@ -73,6 +76,7 @@ The project uses several Google products, including analytics, OAuth for allowin
 
 ### Mailer config
 The project supports Amazon Simple Email Service for sending emails (for account generation, password reset, etc) 
+
 |Name|Description|
 |----|-----------|
 |AWS_SES_SERVER_NAME|SMPT address|
@@ -100,6 +104,7 @@ Obs: if you're setting a local dev machine on OSX and getting small fonts when g
 
 ### New relic
 The project includes support for New Relic application monitoring, if you wish to use it.
+
 |Name|Description|
 |----|-----------|
 |NEW_RELIC_LICENSE_KEY|License key for the service|
