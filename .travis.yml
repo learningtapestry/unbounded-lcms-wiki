@@ -1,0 +1,18 @@
+branches:
+  only:
+  - master
+script:
+- |
+  git config user.name "Alexander Kuznetsov"
+  git config user.email "alexander@learningtapestry.com"
+  git remote remove origin
+  git remote add origin https://$GITHUB_API_KEY@github.com/learningtapestry/unbounded-lcms-wiki.git > /dev/null 2>&1
+  git remote add upstream https://$GITHUB_API_KEY@github.com/learningtapestry/unbounded-lcms.wiki.git > /dev/null 2>&1
+  git fetch origin
+  git fetch upstream
+  git merge upstream/master --no-edit
+  git push origin HEAD:master > /dev/null 2>&1
+  git push upstream HEAD:master > /dev/null 2>&1
+env:
+  matrix:
+    secure: cfObCm8AB/l50wt7AE0btivuU+kMVW1szPW65eyM/UCECZUAd2jhu65QyxFuACAL77Ebw6NrI+ntxX8DO2CFMWY7GIGvucCL5cTOXywM61Tw1nDkJZvfi0lOFqWkMNZzwHX/TbZO23sOGAZzPHBy1fYiKEvqxFYKLw06bmyi8jEZr1Rt0LuK9VH4ZtaaBldu8kfqaUg49xY4hL2BF61eaQOwTWwZWnh6k6f6rhsq0+zdnL+mPf5idpJCCeQ14NrwNP6yuGD63tGAhmbf0q55M1eCwMzh09pU+V3M7ttwtFwAzFOuq9Srj6ZvZ70YKm1FVwtIZDLawJxoMQ1ER1Wvy5aR/2hzaMZQ6HbE18xFOrXSLojo0ry6BYL4PeiuIrRT76rzqukOfXar3dYy4gQa8OzAkA6ACp4xarB4Ldg9YUAIt3EGQIMiVZAoCmB+oNc74ld9GxmvpZBTNFqQTCM+YlV22b6q79WiGXZqe/iOsER5vGipE8b6NyJyTERvEQ8h6nYcH9Ru0B5vezUTG5Iy1A9H5UDjaUVFNAxp28vVV0QaLYCTTLPHD3nNkwnjnqtDwWJeAUW/PVUEtCzqZNLI5VL1wMx8mDozL4yZ/GNjw28VT8x7eRhWMp2PiJpML0YtetzSw8/W/miG5+9t+2xPfMMrVw1BAqrMkWsZcxSlDPI=
