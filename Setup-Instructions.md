@@ -8,7 +8,7 @@
   * [Miscellaneous settings](#miscellaneous-settings)
   * [New Relic](#new-relic)
   * [Postgres](#postgres-config)
-  * [UB Components compiler](#ub-Components-compiler-config)
+  * [UB Components compiler](#UB-Components-compiler-config)
 * [Project setup](#project-setup)
 * [Running the project](#running-the-project)
 * [Running tests](#running-tests)
@@ -69,7 +69,7 @@ The project uses several Google products, including analytics, OAuth for allowin
 |GOOGLE_OAUTH2_CLIENT_ID|Public part of the key which is used for OAuth Google authentication|
 |GOOGLE_OAUTH2_CLIENT_SECRET|Private part of the key which is used for OAuth Google authentication|
 |GOOGLE_APPLICATION_FOLDER_ID|Id of the Google Drive folder where generated lessons and materials will be placed(It's `0B7` for url like `https://drive.google.com/drive/u/0/folders/0B7/...`)|
-|GOOGLE_APPLICATION_SCRIPT_ID|Id of the Google Script created to post-process generated Google documents. More details can be found [here](wiki/Google-Cloud-Platform-setup)|
+|GOOGLE_APPLICATION_SCRIPT_ID|Id of the Google Script created to post-process generated Google documents. More details can be found [here](Google-cloud-platform-setup.md)|
 |GOOGLE_APPLICATION_TEMPLATE_PORTRAIT|Id of the Google document which is a template for portrait materials(can be identified the same way as `GOOGLE_APPLICATION_FOLDER_ID `)|
 |GOOGLE_APPLICATION_TEMPLATE_LANDSCAPE|Id of the Google document which is a template for landscape materials(can be identified the same way as `GOOGLE_APPLICATION_FOLDER_ID `)|
 |GOOGLE_APPLICATION_PREVIEW_FOLDER_ID| Folder ID where preview documents should get placed
@@ -127,7 +127,8 @@ The project includes support for New Relic application monitoring, if you wish t
  
 ## Project setup
 
-1. You should run the task `tmp:cache:clear` every time routes are updated. That will reset generated routes used by Javascript
+1. You should run the task `tmp:cache:clear` every time routes are updated. That will reset generated 
+routes used by Javascript
 
 2. For convenience, a copy of a reference unboundED database is available at `db/dump/content.dump.freeze`.
 
@@ -137,7 +138,9 @@ RAILS_ENV=development rake db:restore
 RAILS_ENV=development rake db:migrate
 ```
 
-You may need to add the `hstore` extension to Postgres if it is not there already. Note that this requires superuser privileges on the database, so pass a username with superuser credentials if your local postgres requires it:
+You may need to add the `hstore` extension to Postgres if it is not there already. Note that this requires
+superuser privileges on the database, so pass a username with superuser credentials if your local postgres 
+requires it:
 
 ```bash
 psql -d [DATABASE_NAME]
@@ -148,7 +151,10 @@ You can also add the extension to your template1, so every new database (for exa
 
 ```bash
 psql -d template1 -c 'create extension hstore;'
-```
+```  
+
+3. To be able to postprocess lessons material in Google Document format you need to setup Google Cloud Platform 
+integration. Detailed instruction can be found [here](Google-cloud-platform-setup.md).
 
 ### For local development
 
