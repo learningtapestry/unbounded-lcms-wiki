@@ -5,3 +5,7 @@
 * [PostgreSQL](https://www.postgresql.org/download/) `>=v9.6`
 * [Redis](https://redis.io/topics/quickstart) `>= v3.0`
 * [ruby](https://www.ruby-lang.org/en/documentation/installation/) `v2.3.3`
+
+## Pull Requests
+
+Considering submitting a pull request to LCMS? Please review the [pull request process](Pull-request-process.md) information.
