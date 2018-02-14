@@ -1,5 +1,3 @@
-# Google Cloud Platform setup
-
 An application calls Google Application Script in order to post-process generated lessons materials. Instructions below 
 contains all the necessary steps need to setup integration.
 

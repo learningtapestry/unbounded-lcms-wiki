@@ -1,4 +1,3 @@
-* [Requirements](#requirements)
 * [Project config](#project-config)
   * [AirBrake](#airbrake-config)
   * [Amazon](#amazon-config)
@@ -10,16 +9,6 @@
   * [Postgres](#postgres-config)
   * [UB Components compiler](#UB-Components-compiler-config)
 * [Project setup](#project-setup)
-* [Running the project](#running-the-project)
-* [Running tests](#running-tests)
-
-## Requirements
-
-* [ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html) `>=v2.2.0`
-* [node](https://nodejs.org/en/download/package-manager/) `>=v5.6.0`
-* [PostgreSQL](https://www.postgresql.org/download/) `>=v9.6`
-* [Redis](https://redis.io/topics/quickstart) `>= v3.0`
-* [ruby](https://www.ruby-lang.org/en/documentation/installation/) `v2.3.3`
 
 ## Project config
 
@@ -196,30 +185,4 @@ run the following task to setup your index and import the data into ES:
 rake es:load
 ```
 
-## Running the project
-
-Start the server:
-
-```bash
-RAILS_ENV=development bin/rails s
-```
-
-Start the single worker to proceed with PDF/GDoc generation:
-
-```bash
-RAILS_ENV=development bundle exec rake resque:work
-```
-
-For controlling the queues precedence and the number of workers, just pass them as vars:
-
-```bash
-QUEUES=default,low COUNT=3 bundle exec rake resque:workers
-```
-
-## Running tests
-
-To run the specs simple:
-
-```bash
-RAILS_ENV=test bin/rspec
-```
+Now you are ready to [run the project](Running-the-project.md)
