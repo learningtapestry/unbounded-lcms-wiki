@@ -1,7 +1,7 @@
 ## Setup                                                                                                                            
 
-- [Project setup](Setup-Instructions.md)
-- [Google Cloud platform](Google-cloud-platform-setup.md)
+- [Project setup](Setup-Instructions)
+- [Google Cloud platform](Google-cloud-platform-setup)
 
 ## Usage
 
