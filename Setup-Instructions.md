@@ -37,8 +37,6 @@ The project uses AWS S3 to store and serve generated PDFs of learning content. Y
 |AWS_REGION|Name of the region used for AWS service|
 |AWS_SECRET_ACCESS_KEY|Private part of the AWS credentials|
 |AWS_S3_BUCKET_NAME|Bucket used by application to store generated files|
-|SWAP_DOCS|Folder inside `AWS_S3_BUCKET_NAME` bucket where generated PDFs of lessons and materials will be stored|
-|SWAP_DOCS_LATEX|Folder inside `AWS_S3_BUCKET_NAME` bucket where generated PNGs of `LatexTag` will be stored|
 
 ### Common standards config
 Common Standards is an API used to map educational content. If you have an AP key you can enter it here:
