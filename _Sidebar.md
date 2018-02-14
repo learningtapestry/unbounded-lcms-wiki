@@ -5,4 +5,4 @@
 
 ## Usage
 
-- [Running a project](Running-the-project.md)
+- [Running the project](Running-the-project)
