@@ -8,4 +8,4 @@
 
 ## Pull Requests
 
-Considering submitting a pull request to LCMS? Please review the [pull request process](Pull-request-process.md) information.
+Considering submitting a pull request to LCMS? Please review the [pull request process](Pull-request-process) information.
