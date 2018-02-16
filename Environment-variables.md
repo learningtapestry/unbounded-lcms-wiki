@@ -1,24 +1,12 @@
-* [Project config](#project-config)
-  * [AirBrake](#airbrake-config)
-  * [Amazon](#amazon-config)
-  * [Common standards](#common-standards-config)
-  * [Google](#google-config)
-  * [Mailer](#mailer-config)
-  * [Miscellaneous settings](#miscellaneous-settings)
-  * [New Relic](#new-relic)
-  * [Postgres](#postgres-config)
-  * [UB Components compiler](#UB-Components-compiler-config)
-* [Project setup](#project-setup)
-
-## Project config
-
-To be able to set up and run the application you need to set special environment variables. You can do that by using 
-1. Set up `.env.test`, `.env.development`
-
-```bash
-cp .env.template .env.development
-cp .env.template .env.test
-```
+* [AirBrake](#airbrake-config)
+* [Amazon](#amazon-config)
+* [Common standards](#common-standards-config)
+* [Google](#google-config)
+* [Mailer](#mailer-config)
+* [Miscellaneous settings](#miscellaneous-settings)
+* [New Relic](#new-relic)
+* [Postgres](#postgres-config)
+* [UB Components compiler](#UB-Components-compiler-config)
 
 ### AirBrake config
 The project is set up to support Airbrake, if you use it. You can provide an Airbrake ID and key in the config to enable it (Should be omitted for `development`&`test` environments)
@@ -111,76 +99,3 @@ The project includes support for New Relic application monitoring, if you wish t
 |----|-----------|
 |UB_COMPONENTS_API_TOKEN|Auth token to access Components Compiler API|
 |UB_COMPONENTS_API_URL|Components Compiler API URL|
- 
-## Project setup
-
-1. You should run the task `tmp:cache:clear` every time routes are updated. That will reset generated 
-routes used by Javascript
-
-2. For convenience, a copy of a reference unboundED database is available at `db/dump/content.dump.freeze`.
-
-```bash
-cp db/dump/content.dump.freeze db/dump/content.dump
-RAILS_ENV=development rake db:restore
-RAILS_ENV=development rake db:migrate
-```
-
-You may need to add the `hstore` extension to Postgres if it is not there already. Note that this requires
-superuser privileges on the database, so pass a username with superuser credentials if your local postgres 
-requires it:
-
-```bash
-psql -d [DATABASE_NAME]
-CREATE EXTENSION hstore;
-```
-
-You can also add the extension to your template1, so every new database (for example, when you restore) will have the extension already created. 
-
-```bash
-psql -d template1 -c 'create extension hstore;'
-```  
-
-3. To be able to postprocess lessons material in Google Document format you need to setup Google Cloud Platform 
-integration. Detailed instruction can be found [here](Google-cloud-platform-setup.md).
-
-### For local development
-
-1. Install required fonts
-
-```bash
-apt-get install fontconfig -y
-cp -R $STACK_PATH/app/assets/fonts/* /usr/local/share/fonts
-fc-cache -f -v
-```
-
-2. Mathjax binaries
-
-```bash
-npm install -g mathjax-node
-npm install -g mathjax-node-cli
-```
-
-3. SVGExport
-
-```bash
-npm install svgexport -g
-npm install pngquant-bin -g
-```
-
-4. Wkhtmltopdf
-
-```bash
-wget https://downloads.wkhtmltopdf.org/0.12/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
-tar xvfJ wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
-cp wkhtmltox/bin/wkhtmltopdf /usr/local/bin
-```
-
-### ElasticSearch index
-
-run the following task to setup your index and import the data into ES:
-
-```bash
-rake es:load
-```
-
-Now you are ready to [run the project](Running-the-project.md)
