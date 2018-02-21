@@ -1,5 +1,6 @@
 - [Home](Home)
 - Setup
-  - [Instructions](Setup-Instructions)
+  - [Install](Install)
+  - [Environment variables](Environment-variables)
   - [Google Cloud platform](Google-cloud-platform-setup)
-- [Usage](Running-the-project)
+- [Running the project](Running-the-project)
