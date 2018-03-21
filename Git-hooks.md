@@ -1,4 +1,4 @@
-Bellow is the pre-commit hook we use when we work on the project. It uses the set of checkers and linters for us to
+Below is the pre-commit hook we use when we work on the project. It uses the set of checkers and linters for us to
 be sure that the codebase is well organized, clean and there are no known vulnerabilities in any of the dependencies.
 
 ### Pre commit hook
