@@ -3,4 +3,6 @@
   - [Install](Install)
   - [Environment variables](Environment-variables)
   - [Google Cloud platform](Google-cloud-platform-setup)
+- Development
+  - [Git Hooks](Git-hooks)
 - [Running the project](Running-the-project)
